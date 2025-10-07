@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price History Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Price History</h1>
+            <p class="subtitle">Track product prices over time</p>
+        </header>
+
+        <div class="product-info" id="productInfo">
+            <div class="loading">Loading price history...</div>
+        </div>
+
+        <div class="stats-grid" id="statsGrid" style="display: none;">
+            <div class="stat-card">
+                <div class="stat-label">Current Price</div>
+                <div class="stat-value" id="currentPrice">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Lowest Price</div>
+                <div class="stat-value" id="lowestPrice">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Highest Price</div>
+                <div class="stat-value" id="highestPrice">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Average Price</div>
+                <div class="stat-value" id="avgPrice">-</div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chartContainer" style="display: none;">
+            <canvas id="priceChart"></canvas>
+        </div>
+
+        <div class="error" id="error" style="display: none;">
+            <p>❌ Unable to load price history. Please try again later.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+      </html>
